@@ -9,16 +9,20 @@ const localStorageContent = localStorage.getItem('name');
 //To safe multiple item silmultaneously use an array
 //Only strings can be stored in a local storage meaning tht the array will be converted into a string before it is stored into the local storage
 //Example: Store multiple name in local storage
-let name = [];
+let name;
+if (localStorageContent === null) {
+    name = [];
+}
+else {
+    name = JSON.parse(localStorageContent);
+}
 //Name:1
 name.push('Albert');
 name.push('Eloumbat Assoua');
 name.push('Al-Baba');
 //Convert to string
-let stringOfNames = JSON.stringify('name');
+let stringOfNames = JSON.stringify(name);
+localStorage.setItem('name', stringOfNames);
+console.log(stringOfNames);
 
-console.log = stringOfNames;
-if (localStorageContent === null) {
-
-}
 
