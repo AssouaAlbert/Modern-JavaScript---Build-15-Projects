@@ -1,17 +1,21 @@
 // Variable Section
-let submitTweet =  document.querySelector("#form");
-
+const submitTweet =  document.getElementById("form");
+const tweet = document.getElementById("tweet")
 // Event Listeners
+eventListener ();
 
-function eventListeners(){
-    submitTweet.addEventListener('submit', newTweet );
-
+function eventListener(){
+submitTweet.addEventListener('submit', newTweet );
 }
-
 
 //Functions
 
 function newTweet (e){
     e.preventDefault();
-    console.log('Working');
+    //Read Tweet value
+    let tweetValue = tweet.value;
+    console.log(tweetValue);
+    //Create a child element when new tweet has been submitted
+    
+
 }
