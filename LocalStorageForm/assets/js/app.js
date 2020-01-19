@@ -102,7 +102,7 @@ function getTweetsFromStorage(){
         let tweets = getTweetsFromStorage();
 
         //Print individual values
-        tweets.forEach(element => {
+        tweets.forEach((element) => {
             //Create Remove Button
 
             const removeBtn = document.createElement('a');
@@ -136,8 +136,8 @@ function removeTweetFromLocalStorage(tweet){
         if(item === tweetDelete){
             console.log("Item is: "+item);
             console.log(tweets);
-            console.log("Yes Deleted")
-            tweets.splice(index, 1)
+            console.log("Yes Deleted");
+            tweets.splice(index, 1);
             console.log(tweets);
         }
 
