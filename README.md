@@ -24,9 +24,6 @@ Session and local storage have the same syntax but session storage is more volat
 	const submitTweet=document.getElementById("form");
 	const tweet =document.getElementById("tweet");
 	const tweetList = document.getElementById("tweet-list");
-	
-``
-
 2. ### Event listener
 	Create 'submit' eventlister for submit button
 	```javascript
@@ -34,8 +31,6 @@ Session and local storage have the same syntax but session storage is more volat
 	function eventListener(){
 	//Afer Submitting the form what should happen
 	submitTweet.addEventListener('submit', newTweet );
-``
-
 3. ### On Submit
 	- PreventDefault event ()
 	- Read the the value of the tweets-fields (tweet-value) 
@@ -91,7 +86,7 @@ Session and local storage have the same syntax but session storage is more volat
 **Note that only addTweetsIntoLocalstorage converts array to string and stores, while get will get the using values and return an array**
 ```javascript
 
-```function getTweetsFromStorage(){
+function getTweetsFromStorage(){
         let tweets;
         const tweetsLS = localStorage.getItem('tweets'); 
 
@@ -105,9 +100,8 @@ Session and local storage have the same syntax but session storage is more volat
         }
         return tweets;
 }
-
-
 ```
+
 7. ### Romoving tweets from screen and from local storage
 	Removing the tweets from the Screen and Local storage is the next phase
 	- prevent Default on the anchor link
