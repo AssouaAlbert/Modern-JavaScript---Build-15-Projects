@@ -83,24 +83,25 @@ Session and local storage have the same syntax but session storage is more volat
 6. ### Get tweets from local Storage
 	
 	The function to get tweets from local storage is define here and it returns an array of the twees stored in the local storage.  
-**Note that only addTweetsIntoLocalstorage converts array to string and stores, while get will get the using values and return an array**
-```javascript
+    **Note that only addTweetsIntoLocalstorage converts array to string and stores, while get will get the using values and return an array**
 
-function getTweetsFromStorage(){
-        let tweets;
-        const tweetsLS = localStorage.getItem('tweets'); 
+    ```javascript
 
-        //Get the values from locat storage
+    function getTweetsFromStorage(){
+            let tweets;
+            const tweetsLS = localStorage.getItem('tweets'); 
 
-        if(tweetsLS === null){
-            tweets = [];
-        }
-        else{
-            tweets = JSON.parse(tweetsLS);
-        }
-        return tweets;
-}
-```
+            //Get the values from locat storage
+
+            if(tweetsLS === null){
+                tweets = [];
+            }
+            else{
+                tweets = JSON.parse(tweetsLS);
+            }
+            return tweets;
+    }
+    ```
 
 7. ### Romoving tweets from screen and from local storage
 	Removing the tweets from the Screen and Local storage is the next phase
@@ -158,7 +159,7 @@ function getTweetsFromStorage(){
     //Saves the data back to loacal storage
     localStorage.setItem("tweets", JSON.stringify(tweets));
     }
-   9. ### Reading the local storage on document load using documentContentLoaded event
+9. ### Reading the local storage on document load using documentContentLoaded event
       A major part is reading the content in local storage on displaying them on load.
 	  - Create an event listener to run the function for loading the content when the document has loaded
 	  	```javascript
