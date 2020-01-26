@@ -124,7 +124,7 @@ function getTweetsFromStorage(){
 
 //Remove tweet from local storage
 function removeTweetFromLocalStorage(tweet){
-    //Note that the twee arguement in this function is the content of the li element
+    //Note that the tweet arguement in this function is the content of the li element
     //Get tweets array from storage
     let tweets = getTweetsFromStorage();
     
