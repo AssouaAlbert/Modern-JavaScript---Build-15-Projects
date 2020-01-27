@@ -1,4 +1,4 @@
-//Variable
+//Deine the Variable
 //Variable to access the courses in the div
 const courses = document.querySelector('#courses-list');
 //Select the table to add the slected courses into the cart
