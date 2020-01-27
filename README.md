@@ -160,6 +160,8 @@ Session and local storage have the same syntax but session storage is more volat
     localStorage.setItem("tweets", JSON.stringify(tweets));
     }
 9. ### Reading the local storage on document load using documentContentLoaded event
+
+
       A major part is reading the content in local storage on displaying them on load.
 	  - Create an event listener to run the function for loading the content when the document has loaded
 	  	```javascript
@@ -192,6 +194,26 @@ Session and local storage have the same syntax but session storage is more volat
         });
         }
  
+## 		2. Adding Products to E-Commerce Cart Using JavaScript
+### About
+For this project the objectives are as follows:
+
+	* On document load, read the items in local storage and print the products on the cart
+	* Create an eventListener for the Add to Cart Buttons
+	* Get information about the Product Cart
+	* Store the information in an object
+	* Access the Cart table and insert the information of the product into the cart
+	* Push the newly added product to the localStorage
+	* Add a delete button to items on the cart
+	* When the button is clicked, delete the item from the local storage and delete the item from the cart
+This project is a complex example of the first project, using objects and creating a more dynamic innnerHTML output.
+
+I can not write to eplain in detail everything which was done as I did in the previous project, but I think the comments in the code will better explain
+
+**Thank you**
+
+##	Simulating Sending Email App
+
 
 
 > Written with [StackEdit](https://stackedit.io/).
