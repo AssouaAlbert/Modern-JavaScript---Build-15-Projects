@@ -754,7 +754,7 @@ tableContent.appendChild(row);
 
   
 
-## Simulating Sending Email App
+## 3. Simulating Sending Email App
 
  ### About
  
