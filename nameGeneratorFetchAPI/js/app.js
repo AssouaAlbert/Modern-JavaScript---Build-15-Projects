@@ -26,5 +26,15 @@ function loadNames(e) {
      if(amount !== ''){
           url += `amount=${amount}&`;
      }
-     
+     fetch(url)
+     .then(response=>response.json())
+     .then(data=>{
+          let html = '<ul class="list">';
+          data.forEach(element => {
+          html +=`<li>${element.name}<br/>`
+          });
+          html += '</ul>'
+          document.getElementById('result').innerHTML = html;
+          console.log(html);
+     })
 }
