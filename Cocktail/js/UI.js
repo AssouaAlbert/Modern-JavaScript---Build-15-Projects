@@ -1,4 +1,23 @@
 class UI {
+
+    displayCategories(selectCategory){
+
+        const categoryList = cockTail.getCategories();
+        categoryList.then((categories)=>{
+            const firstOption = document.createElement('option');
+            firstOption.value = '';
+            firstOption.textContent = '--Select--';
+            selectCategory.appendChild(firstOption);
+            categories.drinks.forEach((category)=>{
+                // console.log('category: ', category);
+                const option = document.createElement('option');
+                option.value = category.strCategory.replace(" ","_").replace(" ","_").replace(" ","_").replace(" ","_").replace(" ","_").replace(" ","_");
+                // option.value = category.strCategory.split(' ').join('_');
+                option.textContent = category.strCategory;
+                selectCategory.appendChild(option);
+            });
+        });
+    }
     displayDrinksWithIngredients(drinks){
         const resultsWrapper = document.querySelector('.results-wrapper');
         resultsWrapper.style.display ='block';
@@ -95,7 +114,7 @@ class UI {
     
                  <div class="card-body">
                       <h2 class="card-title text-center">${drink.strDrink}</h2>
-                      <a class='btn btn-success get-recipe' href='#' data-toggle=modal' data-id=${drink.idDrink}>Get Recipe</a>
+                      <a class='btn btn-success get-recipe' data-target='#recipe'  href='#' data-toggle='modal' data-id='${drink.idDrink}'>Get Recipe</a>
                  </div>
             </div>
        </div>
@@ -108,4 +127,15 @@ class UI {
         while(resultsDiv.firstChild)
         {resultsDiv.firstChild.remove();}
     }
+    displaySingleRecipe(drink){
+          // Get variables
+          const modalTitle = document.querySelector('.modal-title'),
+                modalDescription = document.querySelector('.modal-body .description-text'),
+                modalIngredients = document.querySelector('.modal-body .ingredient-list .list-group');
+        modalTitle.innerHTML = drink.strDrink;
+        modalDescription.innerHTML= drink.strInstructions;
+        modalIngredients.innerHTML = this.displayIngredients(drink);
+
+    }
+
 }
