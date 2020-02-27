@@ -1,11 +1,13 @@
 //Create variables
 const searchForm = document.getElementById('search-form');
 const getRecipe = document.querySelector('#results');
-const searchCategories = document.querySelector('.search-category')
+const searchCategories = document.querySelector('.search-category');
+const favoriteTable = document.querySelector('#favorites');
 
 //Instanciate Classes
 const ui = new UI();
 const cockTail = new CocktailAPI();
+const cocktailDB = new CocktailDB();
 //Create event listeners
 document.addEventListener('DOMContentLoaded', loadCategories)
 if(searchForm){
@@ -14,7 +16,24 @@ if(searchForm){
 if(getRecipe){
     getRecipe.addEventListener('click',resultsDelegation);
 }
+if(favoriteTable){
+    ui.loadFavorites(favoriteTable);
+    favoriteTable.addEventListener('click',displayFavoriteModal)
+}
 //Function Definations
+function displayFavoriteModal(e){
+    e.preventDefault();
+    if(e.target.classList.contains('get-recipe')){
+        cockTail.getSingleRecipe(e.target.dataset.id).then((recipe)=>{
+            ui.displaySingleRecipe(recipe.drinks[0]);
+        });
+    }
+    if(e.target.classList.contains('favorite-btn')){
+        e.target.parentElement.parentElement.remove()
+        // console.log('e.target.parentElement: ', e.target.parentElement.parentElement);
+        cocktailDB.removeFromDB(e.target.dataset.id);
+    }
+}
 function getCocktails(e){
     e.preventDefault();
     const searchTerm = document.getElementById('search').value;
@@ -109,6 +128,25 @@ function resultsDelegation(e){
         cockTail.getSingleRecipe(e.target.dataset.id).then((recipe)=>{
             ui.displaySingleRecipe(recipe.drinks[0]);
         });
+    }
+    else if(e.target.classList.contains('favorite-btn')){
+        if(e.target.classList.contains('is-favorite'))
+        {
+            e.target.classList.remove('is-favorite');
+            e.target.textContent = '+';
+            cocktailDB.removeFromDB(e.target.dataset.id);
+        }
+        else{
+            e.target.classList.add('is-favorite');
+            e.target.textContent = '-';
+            card = e.target.parentElement;
+            const cartInfo = {
+                image : card.querySelector('.card-img-top').src,
+                id: e.target.dataset.id,
+                title: card.querySelector('.card-title').textContent
+            }
+            cocktailDB.saveIntoDB(cartInfo);
+        }
         // console.log('e.target.dataset.id: ', e.target.dataset.id);
     }
 }

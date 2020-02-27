@@ -137,5 +137,19 @@ class UI {
         modalIngredients.innerHTML = this.displayIngredients(drink);
 
     }
+    loadFavorites(favoriteTable){
+        const ls = cocktailDB.getFromDB();
+        const tableContent = favoriteTable.querySelector('tbody');
+        ls.forEach((item)=>{
+            const table = document.createElement('tr');
+            table.innerHTML += `
+                <td><img src='${item.image}' alt='${item.title}'width='100' height='100'></td>
+                <td>${item.title}</td>
+                <td><a class='btn btn-success get-recipe' data-target='#recipe'  href='#' data-toggle='modal' data-id='${item.id}'>Get Recipe</a></td>
+                <td><button type="button" data-id="${item.id}" class="favorite-btn btn btn-outline-info danger">Delete</td>
+                 `
+            tableContent.appendChild(table);
+        });
+    }
 
 }
