@@ -13,7 +13,6 @@ class CocktailDB {
     // Removes element from the Local Storage
     removeFromDB(id) {
          const drinks = this.getFromDB();
-
          // Loop
          drinks.forEach((drink, index) => {
               if(id === drink.id) {
@@ -23,7 +22,6 @@ class CocktailDB {
          // Set the array into local storage
          localStorage.setItem('drinks', JSON.stringify(drinks) );
     }
-
     // Return recipes from storage
     getFromDB() {
          let drinks;
