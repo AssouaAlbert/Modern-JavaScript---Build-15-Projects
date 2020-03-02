@@ -1,7 +1,7 @@
-const cart = ['Product 0','Product 1','Product 2','Product 3','Product 4','Product 5','Product 6','Product 7','Product 8','Product 9','Product 10',]
+const cart = ['Product 0','Product 1','Product 2','Product 3','Product 4','Product 5','Product 6','Prodluct 7','Product 8','Product 9','Product 10']
 var shoppingCart = {
     i : 0,
-    next : function(cart){
+    nextProduct : function(cart){
         let end = (this.i >= cart.length);
                     let value = !end ? cart[this.i++] : undefined;
         
@@ -67,5 +67,18 @@ function makeIterator(object){
             return { iterationCount: iterationCount, done: true }
         }
     }
+}
+array = [];
+outer: for(i=2;i<100;i++){
+    for(j=2;j<i;j++){    
+        if(i%j==0) continue outer;
+    }
+    array.push(i);
+}
+console.log(array);
+alertSomething('Hi');
+
+var alertSomething = function (message){
+    alert(message);
 }
 
