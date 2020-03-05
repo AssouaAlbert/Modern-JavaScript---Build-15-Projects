@@ -28,5 +28,8 @@
   "bugs": {
     "url": "https://github.com/AssouaAlbert/Modern-JavaScript---Build-15-Projects/issues"
   },
-  "homepage": "https://github.com/AssouaAlbert/Modern-JavaScript---Build-15-Projects#readme"
+  "homepage": "https://github.com/AssouaAlbert/Modern-JavaScript---Build-15-Projects#readme",
+  "dependencies": {
+    "yargs": "^15.1.0"
+  }
 }
