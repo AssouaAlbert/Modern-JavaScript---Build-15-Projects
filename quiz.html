@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find the word in another word</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //Good algorithm to use in scrabble to find if a word s can be made from strind w
+    let w='listen';
+    let s='silent';
+    v= s.split('').filter((r)=>{
+        return w.split('').find((q)=>{
+            return r==q;
+        });
+    }).join('');
+</script>
+</html>
