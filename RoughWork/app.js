@@ -1,5 +1,10 @@
+import {Clients} from './main.js';
+console.log();
+let clients = new Clients();
+clients.printMessage();
+
 //Creating and Object
-//Using Onject Litterals
+//Using Object Literals
 //Object literals must always start with a const keyword
 const student1 = {
     name : "Albert",
@@ -38,7 +43,7 @@ function student(name, dob, studclass)  {
     }
 };
 //Creating an instance 
-const studentx = new student("Albert", new Date (2003-03-03), "Form 4");
+const studentx = new student("Albert", new Date (2003-3-3), "Form 4");
 
 console.log(studentx.printfunction());
 
