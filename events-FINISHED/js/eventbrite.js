@@ -1,7 +1,7 @@
 class EventBrite {
      // Constructor when instanciate
      constructor() {
-          this.auth_token = '';
+          this.auth_token = 'U2DJMQIUAFPZZOKE4WGC';
           this.orderby = 'date';
      }
 
@@ -24,7 +24,6 @@ class EventBrite {
 
           // Hold for the response and then return as json
           const categories = await categoriesResponse.json();
-
           return {
                categories
           }
