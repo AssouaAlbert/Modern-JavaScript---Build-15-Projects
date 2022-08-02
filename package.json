@@ -30,6 +30,6 @@
   },
   "homepage": "https://github.com/AssouaAlbert/Modern-JavaScript---Build-15-Projects#readme",
   "dependencies": {
-    "yargs": "^15.1.0"
+    "yargs": "^15.4.1"
   }
 }
